@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./glide/css/glide.core.css">
+    <link rel="stylesheet" href="./glide/css/glide.theme.css">
+</head>
+<body style="height: 100%;">
+<div class="container" style="height: 100%;">
+
+    <!-- Projects Row -->
+    <div class="row" style="height: 100%;">
+        <div id="fastfood" class="col-md-6 col-sm-6 text-center" style="height: 100%; background-image: url('./img/1.jpg');">
+            <div id="fastfood_slider" class="glide">
+                <div class="glide__wrapper">
+                    <ul class="glide__track" style="font-size: 30px; color: #cccccc;">
+                        <li class="glide__slide">
+                            Работаем более 5 лет
+                        </li>
+                        <li class="glide__slide">
+                            Бургеры за 199 рублей
+                        </li>
+                        <li class="glide__slide">
+                            Качественные продукты
+                        </li>
+                        <li class="glide__slide">
+                            Большие порции
+                        </li>
+                        <li class="glide__slide">
+                            Высокое качество блюд
+                        </li>
+                        <li class="glide__slide">
+                            Вкуснейшая кухня
+                        </li>
+                        <li class="glide__slide">
+                            Надёжная охрана
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="restaurant" class="col-md-6 col-sm-6 text-center" style="height: 100%; background-image: url('./img/1.jpg');">
+            <div id="restaurant_slider" class="glide">
+                <div class="glide__wrapper">
+                    <ul class="glide__track" style="font-size: 30px; color: #cccccc;">
+                        <li class="glide__slide">
+                            Постоянный персонал
+                        </li>
+                        <li class="glide__slide">
+                            Известные посетители
+                        </li>
+                        <li class="glide__slide">
+                            Удобная мебель
+                        </li>
+                        <li class="glide__slide">
+                            Модные европейские блюда
+                        </li>
+                        <li class="glide__slide">
+                            Удобное расположение
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+<script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="./js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="./glide/glide.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var fastfoodSlider = $('#fastfood_slider').glide({
+            type: 'slider',
+            paddings: '45%',
+            centered: true,
+            mode: 'vertical',
+            touchDistance: 20,
+            autoplay: false,
+            startAt: 1,
+            swipeEnd: function(event) {
+                // Access to event data
+                console.log(event);
+                $('#fastfood').css("background-image", "url(./img/" + event.index + ".jpg)");
+            }
+        });
+        var restaurantSlider = $('#restaurant_slider').glide({
+            type: 'slider',
+            paddings: '45%',
+            centered: true,
+            mode: 'vertical',
+            touchDistance: 20,
+            autoplay: false,
+            startAt: 1,
+            swipeEnd: function(event) {
+                // Access to event data
+                console.log(event);
+                $('#restaurant').css("background-image", "url(./img/" + event.index + ".jpg)");
+            }
+        });
+    })
+</script>
+</body>
+</html>
